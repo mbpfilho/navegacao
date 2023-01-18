@@ -1,9 +1,19 @@
 import React from "react"
 import "./Content.css"
+import {Routes,Route} from "react-router-dom"
+import Home from "../../views/examples/Home"
+import Param from "../../views/examples/Param"
+import About from "../../views/examples/About"
+// import NewFound from "../../views/examples/NewFound"
 
 const Content=props=>(
   <main className="Content">
-    <h1>Component Content</h1>
+    <Routes>
+      <Route path="/about" element={<About />}></Route>
+      <Route path="/param/:id" element={<Param />} ></Route>
+      <Route path="/" element={<Home />} ></Route>
+      {/* <Route path="*" element={<NotFound />} ></Route> */}
+    </Routes>
   </main>
 )
 
